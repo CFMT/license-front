@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>电子运政</title>
+    <link rel="stylesheet" href="css/home.css" >
+    <link rel="stylesheet" href="css/public.css" >
+</head>
+<body>
+    <div class="home scrollbar">
+        <header class="home-header">
+            <h2>首页</h2>
+            <div class="home-header-user">
+                <img id="applyPhoto" src="image/user.svg" alt="" />
+                <div class="home-user-info">
+                    <p id="applyName"></p>
+                    <p>已实名</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="licence">
+            <div class="licence-title">
+                <span>我的证照</span>
+                <a href="page/licenseList.html">全部</a>
+            </div>
+            <div id="turn" class="licence-banner">
+                <p>道路运输从业人员从业资格证</p>
+                <p id="certificateNo"></p>
+            </div>
+        </div>
+
+        <div class="licence-apply">
+            <div class="licence-apply-title">证照申领</div>
+            <div class="licence-list">
+                <div class="licence-list-item">
+                    <img src="image/occupational-requirements.svg" alt="" />
+                    <p>道路运输从业人员从业资格证</p>
+                </div>
+                <div class="licence-list-item">
+                    <img src="image/taxi-driver-license.svg" alt="" />
+                    <p>巡游出租汽车驾驶员证</p>
+                </div>
+                <div class="licence-list-item">
+                    <img src="image/online-driver-license.svg" alt="" />
+                    <p>网络预约出租汽车驾驶员证</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/public.js"></script>
+<script>
+
+let applyName = di=document.getElementById('applyName');
+let turn = di=document.getElementById('turn');
+let certificateNo = di=document.getElementById('certificateNo');
+let applyPhoto = document.getElementById('applyPhoto');
+
+let info = sessionStorage.info;
+if (info) {
+  info = JSON.parse(info);
+  applyName.innerText = info.applyName || '';
+  certificateNo.innerText = info.certificateNo || '';
+  applyPhoto.src = info.applyPhoto || 'image/user.svg';
+}
+
+turn.onclick = () => {
+  window.location.href = 'page/licenseList.html'
+}
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/login.css" >
+    <link rel="stylesheet" href="../css/public.css" >
+</head>
+<body>
+<div class="login scrollbar">
+    <input id="idCard" type="text" placeholder="请输入手机号"  />
+    <input id="pwd" type="password" placeholder="请输入密码"  />
+    <button id="btn">登录</button>
+
+</div>
+</body>
+<script src="../js/public.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script>
+
+let idCard = document.getElementById('idCard');
+let pwdInput = document.getElementById('pwd');
+let btn = document.getElementById('btn');
+let flag = true;
+
+btn.onclick = function () {
+  if (!flag) {
+    return
+  }
+  let id = idCard.value;
+  let pwd = pwdInput.value;
+  if (!id) {
+    alert('请输入手机号');
+    return;
+  }
+  if (!pwd) {
+    alert('请输入密码');
+    return;
+  }
+  flag = false;
+  btn.innerText = '登录中...';
+  setTimeout(() => {
+    flag = true;
+    sessionStorage.phone = id;
+    window.location.href = '../page/lawEnforcement.html'
+  }, 300)
+
+}
+
+
+
+</script>
+
+</html>

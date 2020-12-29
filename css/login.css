@@ -1,0 +1,30 @@
+.login{
+    padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+#idCard, #pwd{
+    display: block;
+    height: 0.92rem;
+    width: 5.6rem;
+    text-align: center;
+    margin: 0 auto 0.4rem;
+    background: #FFFFFF;
+    border-radius: 0.16rem;
+    border: 0.04rem solid #000000;
+}
+
+
+#btn{
+    display: block;
+    width: 6.5rem;
+    height: 1rem;
+    background: #3B82FF;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: white;
+    margin: 0 auto 0.2rem;
+    font-size: 0.48rem;
+    letter-spacing: 0.04rem;
+    line-height: 1rem;
+}

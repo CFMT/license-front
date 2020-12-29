@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>亮证</title>
+    <link rel="stylesheet" href="../css/public.css" >
+    <link rel="stylesheet" href="../css/showLicense.css" >
+</head>
+<body>
+<div class="show-license scrollbar">
+    <div class="show-license-img">
+        <img src="../image/license.png" alt="" />
+        <img id="download" src="../image/download.svg" alt="" />
+    </div>
+
+    <div class="license-info-title hide">证照信息</div>
+
+    <ul class="license-info-ul hide">
+        <li class="license-info-li">
+            <label>姓名：</label>
+            <span id="applyName"></span>
+        </li>
+        <li class="license-info-li">
+            <label>证号：</label>
+            <span id="certificateNo"></span>
+        </li>
+        <li class="license-info-li">
+            <label>准驾车型：</label>
+            <span id="driverCarType"></span>
+        </li>
+        <li class="license-info-li">
+            <label>从业资格类别：</label>
+            <span>经营性道路货物运输驾驶员</span>
+        </li>
+        <li class="license-info-li">
+            <label>有效起始日期：</label>
+            <span id="issuingAuthorityStartDate"></span>
+        </li>
+        <li class="license-info-li">
+            <label>有效期限：</label>
+            <span id="issuingAuthorityEndDate"></span>
+        </li>
+        <li class="license-info-li">
+            <label>状态：</label>
+            <span style="color: #4AD8B8;">正常</span>
+<!--            <span style="color: #FF1E56;">异常</span>-->
+        </li>
+    </ul>
+
+
+</div>
+</body>
+<script src="../js/public.js"></script>
+<script src="../js/jquery.min.js"></script>
+
+<script>
+
+const download = document.getElementById('download');
+
+download.onclick = () => {
+  const a = document.createElement('a');
+  a.href = '../image/license.png';
+  a.target = '_blank';
+  a.download = 'license';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a)
+};
+
+function getQueryVariable(variable) {
+  let query = window.location.search.substring(1);
+  let vars = query.split("&");
+  for (let i=0; i < vars.length; i++) {
+    let pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  return false;
+}
+
+function formatDate (data) {
+  //  date  2024-12-25
+  if (data) {
+    const y = data.substring(0, 4);
+    const m = data.substring(5, 7);
+    const d = data.substring(8, 10);
+    return `${y}年${m}月${d}日`
+  } else {
+    return ''
+  }
+}
+
+function formatDict (dict, key) {
+  if (!dict || !dict.length || !key) {
+    return ''
+  }
+  const tar = dict.filter(item => item.dictValue === key);
+  if (tar.length) {
+    return tar[0].dictLabel
+  } else {
+    return ''
+  }
+}
+
+id = getQueryVariable('id');
+
+if (id) {
+
+  const applyName = document.getElementById('applyName');
+  const certificateNo = document.getElementById('certificateNo');
+  const driverCarType = document.getElementById('driverCarType');
+  const issuingAuthorityStartDate = document.getElementById('issuingAuthorityStartDate');
+  const issuingAuthorityEndDate = document.getElementById('issuingAuthorityEndDate');
+  const licenseInfoTitle = document.getElementsByClassName('license-info-title')[0];
+  const licenseInfoUl = document.getElementsByClassName('license-info-ul')[0];
+  const dict = [{
+    "dictLabel": "A1",
+    "dictValue": "1",
+  }, {
+
+    "dictLabel": "A2",
+    "dictValue": "2",
+  }, {
+    "dictLabel": "A3",
+    "dictValue": "3",
+  }, {
+
+    "dictLabel": "B1",
+    "dictValue": "4",
+  }, {
+    "dictLabel": "B2",
+    "dictValue": "5",
+  }, {
+    "dictLabel": "C1",
+    "dictValue": "6",
+  }];
+
+  licenseInfoTitle.className = 'license-info-title';
+  licenseInfoUl.className = 'license-info-ul';
+
+  $.ajax({
+    type:'POST',
+    url: ajaxApi + 'login',
+    dataType:'json',
+    contentType: 'application/json',
+    data: JSON.stringify({id: id}),
+    success:function(data){
+      console.log(data);
+      if (data && data.data) {
+        info = data.data;
+        applyName.innerText = info.applyName || '';
+        certificateNo.innerText = info.certificateNo || '';
+        driverCarType.innerText = formatDict(dict, info.driverCarType);
+        issuingAuthorityStartDate.innerText = formatDate(info.issuingAuthorityStartDate);
+        issuingAuthorityEndDate.innerText = formatDate(info.issuingAuthorityEndDate);
+      }
+    },
+    error:function(){
+      alert('获取信息error')
+    }
+  });
+
+}
+
+
+</script>
+
+</html>

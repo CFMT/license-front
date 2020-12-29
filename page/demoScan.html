@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>便民助手</title>
+    <link rel="stylesheet" href="../css/public.css" >
+    <link rel="stylesheet" href="../css/scan.css" >
+</head>
+
+<body>
+<div class="scan scrollbar">
+    <img class="scanBackground" src="../image/scanBackground.png" alt="" />
+    <div id="scanIcon" class="scanIcon"></div>
+    <p id="scanMsg">扫一扫</p>
+    <p>交通运输服务监督电话：12328</p>
+
+    <!--    <form id='form'-->
+    <!--          action="http://licensefront.ptcommon.com/stage-api/activiti/dcodeQr"-->
+    <!--          enctype="multipart/form-data"-->
+    <!--          target="frameName"-->
+    <!--          method="post">-->
+    <!--        <input-->
+    <!--                style="display: none"-->
+    <!--                id="inputImg"-->
+    <!--                type="file"-->
+    <!--                accept="image/*"-->
+    <!--                name="file"-->
+    <!--                capture="camcorder"-->
+    <!--        />-->
+    <!--    </form>-->
+    <!--    <iframe style="display: none" id="frameName" name="frameName"></iframe>-->
+
+    <!--    <video></video>-->
+    <!--    <canvas></canvas>-->
+    <!--    <canvas id="qr-canvas" width="100%" height="100"></canvas>-->
+    <!--    <video id="v" autoplay></video>-->
+
+    <video id="video" class="visibility" autoplay="autoplay" controls="false" muted="" x-webkit-airplay="allow"></video>
+    <canvas id="canvas" class="hide" width="500" height="500" ></canvas>
+
+
+</div>
+
+</body>
+<!--<script src="https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>-->
+<script src="../js/public.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-form.js"></script>
+<!--<script>-->
+<!--let inputImg = document.getElementById('inputImg');-->
+<!--let form = document.getElementById('form');-->
+<!--let scanIcon = document.getElementById('scanIcon');-->
+<!--let scanMsg = document.getElementById('scanMsg');-->
+<!--let flag = true;-->
+
+<!--inputImg.onchange = function () {-->
+<!--  scanMsg.innerText = '二维码解析中，请稍后...';-->
+<!--  $("#form").ajaxSubmit(function (data) {-->
+<!--    if (data.code === 200) {-->
+<!--      console.log(data);-->
+<!--      window.location.href = 'check.html?id=' + data.data-->
+<!--    } else {-->
+<!--      scanMsg.innerText = '扫一扫';-->
+<!--      flag = true;-->
+<!--      alert('123456');-->
+<!--    }-->
+<!--  });-->
+<!--};-->
+
+<!--scanIcon.onclick = () => {-->
+<!--  if (!flag) {-->
+<!--    return-->
+<!--  }-->
+<!--  flag = false;-->
+<!--  inputImg.click()-->
+<!--};-->
+<!--</script>-->
+
+
+
+<script>
+// console.log((document.documentElement.clientWidth / 750) * 500,'44')
+
+let videoWith = (document.documentElement.clientWidth / 750) * 660;
+
+// let vConsole = new VConsole();
+
+let scanIcon = document.getElementById('scanIcon');
+let video = document.getElementById("video");
+let canvas = document.getElementById("canvas");
+let scanMsg = document.getElementById('scanMsg');
+// let scanIconWidth = video.offsetWidth;
+// let scanIconHeight = video.offsetHeight;
+// console.log(videoWith, videoWith, 'scanIconHeight' );
+let count = 0;
+window.navigator.getUserMedia = navigator.getUserMedia || navigator.webKitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+// let inputImg = document.getElementById('inputImg');
+//
+// inputImg.onchange = function (e) {
+//
+// };
+
+let constraints = {
+  video: {width: videoWith, height: videoWith, facingMode: { exact: "environment" } },
+  audio: true
+};
+
+navigatorSuccess = function (stream) {
+  scanMsg.innerText = '二维码解析中，请稍候';
+  if ( count >= 20 ) {
+    alert('二维码无法识别，请重新扫描');
+    scanIcon.className = 'scanIcon';
+    video.className = 'visibility';
+    scanMsg.innerText = '扫一扫';
+    count = 0;
+    return
+  }
+
+  scanIcon.className = 'hide';
+  video.className = '';
+  video.srcObject = stream;
+  video.play();
+  setTimeout(takePhoto , 1000)
+};
+
+navigatorError = function (err) {
+  alert('error');
+  console.log('navigatorError==', err)
+};
+
+camera = function () {
+  if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+    navigator.mediaDevices.getUserMedia(constraints)
+      .then(navigatorSuccess)
+      .catch(navigatorError)
+  }else if( navigator.getUserMedia ){
+    navigator.getUserMedia(constraints, navigatorSuccess, navigatorError)
+  }else{
+    console.log('不支持摄像头调用！')
+  }
+
+  //
+  // if(navigator.getUserMedia) { // Standard
+  //   console.log(navigator.getUserMedia,'navigator.getUserMedia');
+  //   navigator.getUserMedia(constraints, navigatorSuccess, navigatorError);
+  // } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+  //   alert('222')
+  //   console.log(navigator.webkitGetUserMedia,'navigator.webkitGetUserMedia');
+  //   navigator.webkitGetUserMedia(constraints, navigatorSuccess, navigatorError);
+  // } else if(navigator.mozGetUserMedia ) { // Firefox-prefixed
+  //   alert('333')
+  //   console.log(navigator.mozGetUserMedia,'navigator.mozGetUserMedia');
+  //   navigator.mozGetUserMedia(constraints, navigatorSuccess, navigatorError);
+  // } else if (navigator.msGetUserMedia) {
+  //   alert('55')
+  //   navigator.msGetUserMedia(constraints, navigatorSuccess, navigatorError);
+  // } else {
+  //   alert('44')
+  //   console.log('5555555555555')
+  // }
+};
+
+scanIcon.onclick = camera;
+
+function takePhoto() {
+  //获得Canvas对象
+  // canvas.className = '';
+  // let width = video.videoWidth;
+  // let height = video.videoHeight;
+  // console.log('video=', videoWith, videoWith);
+  // canvas.offsetWidth = videoWith;
+  // canvas.offsetHeight = videoWith;
+  let ctx = canvas.getContext('2d');
+  ctx.drawImage(video, 0, 0, videoWith, videoWith);
+  let base64 = canvas.toDataURL('images/png');
+  // console.log('base64', base64);
+  // const a = document.createElement('a');
+  // a.href = base64;
+  // a.target = '_blank';
+  // a.download = 'license12345678';
+  // document.body.appendChild(a);
+  // a.click();
+  // document.body.removeChild(a)
+
+  let file =  dataURLtoFile(base64);
+  upload(file)
+
+}
+
+function upload (file) {
+  count++;
+  let param = new FormData();
+  param.append('file', file);
+  $.ajax({
+    type: 'post',
+    processData: false,
+    contentType: false,
+    url: ajaxApi + 'dcodeQr',
+    dataType:'json',
+    data: param,
+    success:function(data){
+      if (data.code === 200) {
+        count = 0;
+        window.location.href = 'check.html?id=' + data.data;
+      } else {
+        camera()
+      }
+    },
+    error:function(){
+      camera()
+    }
+  })
+}
+
+function dataURLtoFile (dataurl, filename = 'file') {
+  let arr = dataurl.split(',');
+  let mime = arr[0].match(/:(.*?);/)[1];
+  let suffix = mime.split('/')[1];
+  let bstr = atob(arr[1]);
+  let n = bstr.length;
+  let u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+  return new File([u8arr], `${filename}.${suffix}`, {type: mime})
+}
+
+
+
+</script>
+
+
+
+</html>

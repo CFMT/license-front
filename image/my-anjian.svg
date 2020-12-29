@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="66px" viewBox="0 0 150 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>我的案件</title>
+    <defs>
+        <linearGradient x1="94.8614607%" y1="57.5768278%" x2="-17.034249%" y2="33.5616323%" id="linearGradient-1">
+            <stop stop-color="#D5AFFF" offset="0%"></stop>
+            <stop stop-color="#EFDDFF" offset="72.5057204%"></stop>
+            <stop stop-color="#F0DFFF" offset="100%"></stop>
+            <stop stop-color="#76D0BE" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="150" height="66" rx="8"></rect>
+    </defs>
+    <g id="我的案件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-3">
+            <g id="椭圆形">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="蒙版" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <ellipse fill="#FFFFFF" opacity="0.22093564" mask="url(#mask-3)" cx="124" cy="62" rx="28" ry="26"></ellipse>
+                <ellipse id="椭圆形备份" fill="#FFFFFF" opacity="0.129092262" mask="url(#mask-3)" cx="149" cy="48" rx="28" ry="26"></ellipse>
+            </g>
+            <g id="anjian" opacity="0.479678199" transform="translate(10.000000, 11.000000)" fill-rule="nonzero">
+                <path d="M30.3900255,9 L52,9 C52,3.95327103 50.0529084,0.0280373832 45.719944,0.0280373832 L24,0 C23.9728503,0 26.0022134,9 30.3900255,9 Z" id="路径" fill="#FFAC28"></path>
+                <path d="M16.178089,0 L4.56728364,0 C2.09104552,0 0.0550275138,1.79369981 0.0550275138,4.02223595 L0,39.9234095 C0,42.1247684 2.00850425,43.9728227 4.51225613,43.9728227 L50.4602301,44 C52.9364682,44 54.9724862,42.2063002 54.9724862,39.9777641 L55,16.1976529 C55,13.996294 52.9914957,12.1482397 50.4877439,12.1482397 L30.3201601,12.1210624 C24.6523262,12.1210624 22.8914457,9.7566399 21.7633817,6.44101297 L20.4152076,2.7992588 C19.8924462,1.11426807 18.2141071,0 16.178089,0 Z" id="路径" fill="#A882D0"></path>
+                <path d="M41.6718736,30 L12.3553012,30 C11.0529582,30 10,28.8823529 10,27.5 C10,26.1176471 11.0529582,25 12.3553012,25 L41.6441642,25 C42.9465072,25 43.9994654,26.1176471 43.9994654,27.5 C44.0271748,28.8823529 42.9742166,30 41.6718736,30 L41.6718736,30 Z" id="路径" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,91 @@
+.lawEnforcement{
+    height: 100%;
+}
+
+.lawEnforcement >img{
+    width: 100%;
+}
+
+.lawEnforcement .main{
+    width: 100%;
+    padding: 0.88rem 0 0.33rem;
+    overflow: hidden;
+}
+
+.lawEnforcement .main >div{
+    width: 50%;
+    height: 1.32rem;
+    margin-bottom: 0.42rem;
+    float: left;
+}
+
+.lawEnforcement .main >div >div{
+    width: 3rem;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lawEnforcement .main >div >div p:nth-of-type(1){
+    font-size: 0.32rem;
+    height: 0.72rem;
+    line-height: 0.92rem;
+    font-weight: 600;
+}
+
+.lawEnforcement .main >div >div p:nth-of-type(2){
+    font-size: 0.24rem;
+    line-height: 0.34rem;
+}
+
+.lawEnforcement .main .main1{
+    background: url('../image/show-license.svg') no-repeat left top/100%;
+    color: #2C3E7E;
+}
+
+.lawEnforcement .main .main1 a{
+    color: #2C3E7E;
+}
+
+.lawEnforcement .main .main2{
+    background: url('../image/diaocha.svg') no-repeat left top/100%;
+    color: #593D05;
+}
+
+.lawEnforcement .main .main3{
+    background: url('../image/wait.svg') no-repeat left top/100%;
+    color: #216325;
+}
+
+.lawEnforcement .main .main4{
+    background: url('../image/my-anjian.svg') no-repeat left top/100%;
+    color: #401B67;
+}
+
+.lawEnforcement .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 1rem;
+    width: 100%;
+    box-shadow: 0px 0px 12px 0px rgba(0, 101, 154, 0.12);
+    display: flex;
+    background: white;
+}
+
+.lawEnforcement .footer >div{
+    flex: 1;
+    height: 100%;
+    text-align: center;
+}
+
+.lawEnforcement .footer >div img{
+    margin: 0.08rem auto 0.06rem;
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+.lawEnforcement .footer >div >div{
+    font-size: 0.24rem;
+    color: #248AFF;
+}

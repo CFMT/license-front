@@ -1,0 +1,66 @@
+.licence-list{
+    padding: 0 0.32rem;
+    height: 100%;
+    overflow: auto;
+}
+
+.licence-list h2{
+    height: 0.8rem;
+    font-size: 0.28rem;
+    font-weight: 600;
+    color: #000000;
+    line-height: 0.8rem;
+}
+
+.licence-list span{
+    color: #CFCFCF;
+    font-weight: 400;
+}
+
+.licence-list-ul li{
+    height: 2.32rem;
+    box-shadow: 0px 0px 12px 0px rgba(153, 153, 153, 0);
+    border-radius: 0.18rem;
+    box-sizing: border-box;
+    padding-top: 0.52rem;
+    position: relative;
+    margin-bottom: 0.2rem;
+    opacity: 0.5;
+}
+
+.licence-list-ul li:nth-of-type(1){
+    opacity: 1;
+}
+
+.licence-list-ul li:nth-child(odd){
+    background: url('../image/license-blue.svg') no-repeat left top/100%;
+}
+
+.licence-list-ul li:nth-child(even){
+    background: url('../image/license-red.svg') no-repeat left top/100%;
+}
+
+.licence-list-ul li p{
+    text-indent: 1.28rem;
+    height: 0.44rem;
+    font-size: 0.32rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 0.44rem;
+    margin-bottom: 0.28rem;
+}
+
+.show-license-btn{
+    display: block;
+    position: absolute;
+    right: 0.48rem;
+    bottom: 0.24rem;
+    width: 0.6rem;
+    height: 0.9rem;
+    font-size: 0.24rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.3rem;
+    background: url('../image/show-btn.svg') no-repeat center top;
+}

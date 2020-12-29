@@ -1,0 +1,67 @@
+
+.check .p1{
+    font-size: 0.36rem;
+    font-weight: 600;
+    color: #333333;
+    height: 2.3rem;
+    text-align: center;
+    line-height: 2.6rem;
+}
+
+#check-input{
+    display: block;
+    height: 0.92rem;
+    width: 5.6rem;
+    text-align: center;
+    margin: 0 auto 0.4rem;
+    background: #FFFFFF;
+    border-radius: 0.16rem;
+    border: 0.04rem solid #000000;
+}
+
+.check .p2{
+    font-size: 0.28rem;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 2.8rem;
+}
+
+.check .p3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.28rem;
+    color: #999999;
+    margin-bottom: 0.2rem;
+    height: 0.4rem;
+}
+
+.check .p3 span{
+    display: block;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.16rem;
+}
+
+.unCheck{
+    background: url("../image/unCheck.svg") no-repeat left top/100%;
+}
+
+.checked{
+    background: url("../image/checked.svg") no-repeat left top/100%;
+}
+
+.check button{
+    display: block;
+    width: 6.5rem;
+    height: 0.72rem;
+    background: #3B82FF;
+    border-radius: 0.36rem;
+    text-align: center;
+    color: white;
+    margin: 0 auto 0.2rem;
+    font-size: 0.32rem;
+    letter-spacing: 0.04rem;
+    line-height: 0.72rem;
+
+}
