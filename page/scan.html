@@ -16,97 +16,32 @@
     <p id="scanMsg">扫一扫</p>
     <p>交通运输服务监督电话：12328</p>
 
-<!--    <form id='form'-->
-<!--          action="http://licensefront.ptcommon.com/stage-api/activiti/dcodeQr"-->
-<!--          enctype="multipart/form-data"-->
-<!--          target="frameName"-->
-<!--          method="post">-->
-<!--        <input-->
-<!--                style="display: none"-->
-<!--                id="inputImg"-->
-<!--                type="file"-->
-<!--                accept="image/*"-->
-<!--                name="file"-->
-<!--                capture="camcorder"-->
-<!--        />-->
-<!--    </form>-->
-<!--    <iframe style="display: none" id="frameName" name="frameName"></iframe>-->
-
-<!--    <video></video>-->
-<!--    <canvas></canvas>-->
-<!--    <canvas id="qr-canvas" width="100%" height="100"></canvas>-->
-<!--    <video id="v" autoplay></video>-->
-
     <video id="video" class="visibility" autoplay="autoplay" controls="false" muted="" x-webkit-airplay="allow"></video>
     <canvas id="canvas" class="hide" width="500" height="500" ></canvas>
-
-
 </div>
 
 </body>
-<!--<script src="https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>-->
 <script src="../js/public.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery-form.js"></script>
-<!--<script>-->
-<!--let inputImg = document.getElementById('inputImg');-->
-<!--let form = document.getElementById('form');-->
-<!--let scanIcon = document.getElementById('scanIcon');-->
-<!--let scanMsg = document.getElementById('scanMsg');-->
-<!--let flag = true;-->
-
-<!--inputImg.onchange = function () {-->
-<!--  scanMsg.innerText = '二维码解析中，请稍后...';-->
-<!--  $("#form").ajaxSubmit(function (data) {-->
-<!--    if (data.code === 200) {-->
-<!--      console.log(data);-->
-<!--      window.location.href = 'check.html?id=' + data.data-->
-<!--    } else {-->
-<!--      scanMsg.innerText = '扫一扫';-->
-<!--      flag = true;-->
-<!--      alert('123456');-->
-<!--    }-->
-<!--  });-->
-<!--};-->
-
-<!--scanIcon.onclick = () => {-->
-<!--  if (!flag) {-->
-<!--    return-->
-<!--  }-->
-<!--  flag = false;-->
-<!--  inputImg.click()-->
-<!--};-->
-<!--</script>-->
-
+<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>
 
 
 <script>
-// console.log((document.documentElement.clientWidth / 750) * 500,'44')
+const vConsole = new VConsole();
 
 let videoWith = (document.documentElement.clientWidth / 750) * 660;
-
-// let vConsole = new VConsole();
-
 let scanIcon = document.getElementById('scanIcon');
 let video = document.getElementById("video");
 let canvas = document.getElementById("canvas");
 let scanMsg = document.getElementById('scanMsg');
-// let scanIconWidth = video.offsetWidth;
-// let scanIconHeight = video.offsetHeight;
-// console.log(videoWith, videoWith, 'scanIconHeight' );
 let count = 0;
-window.navigator.getUserMedia = navigator.getUserMedia || navigator.webKitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-
-// let inputImg = document.getElementById('inputImg');
-//
-// inputImg.onchange = function (e) {
-//
-// };
-
 let constraints = {
   video: {width: videoWith, height: videoWith, facingMode: { exact: "environment" } },
   audio: true
 };
+
+window.navigator.getUserMedia = navigator.getUserMedia || navigator.webKitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
 navigatorSuccess = function (stream) {
   scanMsg.innerText = '二维码解析中，请稍候';
@@ -127,67 +62,28 @@ navigatorSuccess = function (stream) {
 };
 
 navigatorError = function (err) {
-  alert('error');
+  alert('摄像头调用error');
   console.log('navigatorError==', err)
 };
 
 camera = function () {
-  if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia(constraints)
       .then(navigatorSuccess)
       .catch(navigatorError)
-  }else if( navigator.getUserMedia ){
+  } else if ( navigator.getUserMedia ) {
     navigator.getUserMedia(constraints, navigatorSuccess, navigatorError)
-  }else{
+  } else {
     console.log('不支持摄像头调用！')
   }
-
-  //
-  // if(navigator.getUserMedia) { // Standard
-  //   console.log(navigator.getUserMedia,'navigator.getUserMedia');
-  //   navigator.getUserMedia(constraints, navigatorSuccess, navigatorError);
-  // } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-  //   alert('222')
-  //   console.log(navigator.webkitGetUserMedia,'navigator.webkitGetUserMedia');
-  //   navigator.webkitGetUserMedia(constraints, navigatorSuccess, navigatorError);
-  // } else if(navigator.mozGetUserMedia ) { // Firefox-prefixed
-  //   alert('333')
-  //   console.log(navigator.mozGetUserMedia,'navigator.mozGetUserMedia');
-  //   navigator.mozGetUserMedia(constraints, navigatorSuccess, navigatorError);
-  // } else if (navigator.msGetUserMedia) {
-  //   alert('55')
-  //   navigator.msGetUserMedia(constraints, navigatorSuccess, navigatorError);
-  // } else {
-  //   alert('44')
-  //   console.log('5555555555555')
-  // }
 };
 
-scanIcon.onclick = camera;
-
 function takePhoto() {
-  //获得Canvas对象
-  // canvas.className = '';
-  // let width = video.videoWidth;
-  // let height = video.videoHeight;
-  // console.log('video=', videoWith, videoWith);
-  // canvas.offsetWidth = videoWith;
-  // canvas.offsetHeight = videoWith;
   let ctx = canvas.getContext('2d');
   ctx.drawImage(video, 0, 0, videoWith, videoWith);
   let base64 = canvas.toDataURL('images/png');
-  // console.log('base64', base64);
-  // const a = document.createElement('a');
-  // a.href = base64;
-  // a.target = '_blank';
-  // a.download = 'license12345678';
-  // document.body.appendChild(a);
-  // a.click();
-  // document.body.removeChild(a)
-
-  let file =  dataURLtoFile(base64);
+  let file = dataURLtoFile(base64);
   upload(file)
-
 }
 
 function upload (file) {
@@ -202,9 +98,10 @@ function upload (file) {
     dataType:'json',
     data: param,
     success:function(data){
+      console.log('data==' ,data);
       if (data.code === 200) {
         count = 0;
-        window.location.href = 'check.html?id=' + data.data;
+        window.location.href = 'check.html?idCardNo=' + data.data;
       } else {
         camera()
       }
@@ -215,23 +112,8 @@ function upload (file) {
   })
 }
 
-function dataURLtoFile (dataurl, filename = 'file') {
-  let arr = dataurl.split(',');
-  let mime = arr[0].match(/:(.*?);/)[1];
-  let suffix = mime.split('/')[1];
-  let bstr = atob(arr[1]);
-  let n = bstr.length;
-  let u8arr = new Uint8Array(n);
-  while (n--) {
-    u8arr[n] = bstr.charCodeAt(n)
-  }
-  return new File([u8arr], `${filename}.${suffix}`, {type: mime})
-}
-
-
+scanIcon.onclick = camera;
 
 </script>
-
-
 
 </html>

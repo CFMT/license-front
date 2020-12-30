@@ -58,8 +58,8 @@ let applyName = di=document.getElementById('applyName');
 let turn = di=document.getElementById('turn');
 let certificateNo = di=document.getElementById('certificateNo');
 let applyPhoto = document.getElementById('applyPhoto');
-
 let info = sessionStorage.info;
+
 if (info) {
   info = JSON.parse(info);
   applyName.innerText = info.applyName || '';
@@ -70,9 +70,6 @@ if (info) {
 turn.onclick = () => {
   window.location.href = 'page/licenseList.html'
 }
-
-
-
 
 </script>
 

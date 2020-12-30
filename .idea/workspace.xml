@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f19e8d05-7f38-479e-a2a6-4749d19d1792" name="Default Changelist" comment="" />
+    <list default="true" id="f19e8d05-7f38-479e-a2a6-4749d19d1792" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/banner.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/banner.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/checked.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/checked.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/code.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/code123.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/code1234.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/code22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/diaocha.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/diaocha.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/download.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/download.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/homeIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/homeIcon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/license-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/license-blue.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/license-red.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/license-red.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/my-anjian.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/my-anjian.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/occupational-requirements.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/occupational-requirements.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/online-driver-license.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/online-driver-license.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/scanIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/scanIcon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/show-btn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/show-btn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/show-license.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/show-license.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/taxi-driver-license.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/taxi-driver-license.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/unCheck.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/unCheck.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/user.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/user.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/userIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/userIcon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/wait.svg" beforeDir="false" afterPath="$PROJECT_DIR$/image/wait.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/check.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/check.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/demoScan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/scan.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/scan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/showLicense.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/showLicense.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/video.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/index-svg.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/index.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/qrcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-制码/qrcode.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/.idea/weijunw-erweima-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/erweima/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/erweima/erweima-jiexi-demo/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/erweima/erweima-jiexi-demo/reqrcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcodejs-解码/erweima/erweima-jiexi-demo/test.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +61,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1mK4oCeZncTVv7yAqnVBihERRNn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -42,6 +97,10 @@
       <option name="presentableId" value="Default" />
       <updated>1609229120627</updated>
       <workItem from="1609229121798" duration="12000" />
+      <workItem from="1609314446975" duration="31000" />
+      <workItem from="1609314488402" duration="8000" />
+      <workItem from="1609314534497" duration="33000" />
+      <workItem from="1609314711208" duration="121000" />
     </task>
     <servers />
   </component>

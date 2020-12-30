@@ -49,15 +49,17 @@
         </li>
     </ul>
 
-
 </div>
 </body>
 <script src="../js/public.js"></script>
 <script src="../js/jquery.min.js"></script>
-
+<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>
 <script>
 
+const vConsole = new VConsole();
 const download = document.getElementById('download');
+const idCardNo = getQueryVariable('idCardNo');
+console.log('idCardNo==' ,idCardNo);
 
 download.onclick = () => {
   const a = document.createElement('a');
@@ -69,46 +71,7 @@ download.onclick = () => {
   document.body.removeChild(a)
 };
 
-function getQueryVariable(variable) {
-  let query = window.location.search.substring(1);
-  let vars = query.split("&");
-  for (let i=0; i < vars.length; i++) {
-    let pair = vars[i].split("=");
-    if (pair[0] == variable) {
-      return pair[1];
-    }
-  }
-  return false;
-}
-
-function formatDate (data) {
-  //  date  2024-12-25
-  if (data) {
-    const y = data.substring(0, 4);
-    const m = data.substring(5, 7);
-    const d = data.substring(8, 10);
-    return `${y}年${m}月${d}日`
-  } else {
-    return ''
-  }
-}
-
-function formatDict (dict, key) {
-  if (!dict || !dict.length || !key) {
-    return ''
-  }
-  const tar = dict.filter(item => item.dictValue === key);
-  if (tar.length) {
-    return tar[0].dictLabel
-  } else {
-    return ''
-  }
-}
-
-id = getQueryVariable('id');
-
-if (id) {
-
+if (idCardNo) {
   const applyName = document.getElementById('applyName');
   const certificateNo = document.getElementById('certificateNo');
   const driverCarType = document.getElementById('driverCarType');
@@ -146,9 +109,9 @@ if (id) {
     url: ajaxApi + 'login',
     dataType:'json',
     contentType: 'application/json',
-    data: JSON.stringify({id: id}),
+    data: JSON.stringify({idCardNo: idCardNo}),
     success:function(data){
-      console.log(data);
+      console.log('login data==', data);
       if (data && data.data) {
         info = data.data;
         applyName.innerText = info.applyName || '';
@@ -162,9 +125,7 @@ if (id) {
       alert('获取信息error')
     }
   });
-
 }
-
 
 </script>
 

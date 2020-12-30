@@ -26,23 +26,8 @@
 const checkInput = document.getElementById('check-input');
 const rememberPWD = document.getElementById('rememberPWD');
 const checkButton = document.getElementById('check-button');
-let id = '';
-
-function getQueryVariable(variable) {
-  console.log('variable',variable)
-  let query = window.location.search.substring(1);
-  let vars = query.split("&");
-  for (let i=0; i < vars.length; i++) {
-    let pair = vars[i].split("=");
-    if (pair[0] == variable) {
-      return pair[1];
-    }
-  }
-  return false;
-}
-
-id = getQueryVariable('id');
-console.log('id==', id);
+const idCardNo = getQueryVariable('idCardNo');
+console.log('idCardNo==', idCardNo);
 
 checkButton.onclick = () => {
   const pwd = checkInput.value;
@@ -50,7 +35,7 @@ checkButton.onclick = () => {
     alert('请输入访问密码');
     return
   }
-  window.location.href = 'showLicense.html?id=' + id
+  window.location.href = 'showLicense.html?idCardNo=' + idCardNo
 };
 
 rememberPWD.onclick = (e) => {
