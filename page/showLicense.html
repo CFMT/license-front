@@ -11,8 +11,9 @@
 <body>
 <div class="show-license scrollbar">
     <div class="show-license-img">
-        <img src="../image/license.png" alt="" />
-        <img id="download" src="../image/download.svg" alt="" />
+        <iframe id="license-img" scrolling="no" src=""></iframe>
+<!--        <img src="../image/license.png" alt="" />-->
+<!--        <img id="download" src="../image/download.svg" alt="" />-->
     </div>
 
     <div class="license-info-title hide">证照信息</div>
@@ -57,19 +58,19 @@
 <script>
 
 const vConsole = new VConsole();
-const download = document.getElementById('download');
+// const download = document.getElementById('download');
+const licenseImg = document.getElementById('license-img');
 const idCardNo = getQueryVariable('idCardNo');
-console.log('idCardNo==' ,idCardNo);
 
-download.onclick = () => {
-  const a = document.createElement('a');
-  a.href = '../image/license.png';
-  a.target = '_blank';
-  a.download = 'license';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a)
-};
+// download.onclick = () => {
+//   const a = document.createElement('a');
+//   a.href = '../image/license.png';
+//   a.target = '_blank';
+//   a.download = 'license';
+//   document.body.appendChild(a);
+//   a.click();
+//   document.body.removeChild(a)
+// };
 
 if (idCardNo) {
   const applyName = document.getElementById('applyName');
@@ -113,9 +114,10 @@ if (idCardNo) {
     success:function(data){
       console.log('login data==', data);
       if (data && data.data) {
-        info = data.data;
+        const info = data.data;
         applyName.innerText = info.applyName || '';
         certificateNo.innerText = info.certificateNo || '';
+        licenseImg.src= info.licenseFileUrl;
         driverCarType.innerText = formatDict(dict, info.driverCarType);
         issuingAuthorityStartDate.innerText = formatDate(info.issuingAuthorityStartDate);
         issuingAuthorityEndDate.innerText = formatDate(info.issuingAuthorityEndDate);
@@ -125,6 +127,13 @@ if (idCardNo) {
       alert('获取信息error')
     }
   });
+} else {
+  let info = sessionStorage.info;
+
+  if (info) {
+    info = JSON.parse(info);
+    licenseImg.src= info.licenseFileUrl
+  }
 }
 
 </script>
