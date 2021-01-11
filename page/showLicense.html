@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="../css/showLicense.css" >
 </head>
 <body>
-<div class="show-license scrollbar">
-    <div class="show-license-img">
-        <iframe id="license-img" scrolling="no" src=""></iframe>
+<div class="show-license">
+<!--    <div class="show-license-img">-->
+        <iframe id="license-img" width="100%" scrolling="yes" src=""></iframe>
 <!--        <img src="../image/license.png" alt="" />-->
 <!--        <img id="download" src="../image/download.svg" alt="" />-->
-    </div>
+<!--    </div>-->
 
     <div class="license-info-title hide">证照信息</div>
 
@@ -57,10 +57,67 @@
 <script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>
 <script>
 
+function getQueryVariable(variable) {
+  let query = window.location.search.substring(1);
+  let vars = query.split("&");
+  for (let i=0; i < vars.length; i++) {
+    let pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  return false;
+}
+
+function formatDate (data) {
+  //  date  2024-12-25
+  if (data) {
+    const y = data.substring(0, 4);
+    const m = data.substring(5, 7);
+    const d = data.substring(8, 10);
+    return `${y}年${m}月${d}日`
+  } else {
+    return ''
+  }
+}
+
+function formatDict (dict, key) {
+  if (!dict || !dict.length || !key) {
+    return ''
+  }
+  const tar = dict.filter(item => item.dictValue === key);
+  if (tar.length) {
+    return tar[0].dictLabel
+  } else {
+    return ''
+  }
+}
+
+function is_weixn(){
+  let ua = navigator.userAgent.toLowerCase();
+  if ( ua.match(/MicroMessenger/i) == "micromessenger" ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let licenseImgHeight = (document.documentElement.clientWidth / 750) * 1160;
 const vConsole = new VConsole();
 // const download = document.getElementById('download');
 const licenseImg = document.getElementById('license-img');
 const idCardNo = getQueryVariable('idCardNo');
+
+licenseImg.height = licenseImgHeight;
+
+// if (is_weixn()) {
+//   console.log('wx' ,licenseImgHeight * 1.5);
+//   licenseImg.height = licenseImgHeight * 1.5;
+// } else {
+//   console.log(licenseImgHeight);
+//   licenseImg.height = licenseImgHeight;
+// }
+
 
 // download.onclick = () => {
 //   const a = document.createElement('a');

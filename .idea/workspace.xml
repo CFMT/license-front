@@ -4,7 +4,10 @@
     <list default="true" id="f19e8d05-7f38-479e-a2a6-4749d19d1792" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/showLicense.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/showLicense.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/check.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/check.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/loginLaw.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/loginLaw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/scan.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/scan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page/showLicense.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/showLicense.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +74,8 @@
       <workItem from="1609461272537" duration="238000" />
       <workItem from="1609722139869" duration="908000" />
       <workItem from="1609808701025" duration="197000" />
-      <workItem from="1609820434439" duration="3985000" />
+      <workItem from="1609820434439" duration="4100000" />
+      <workItem from="1609835663088" duration="9402000" />
     </task>
     <task id="LOCAL-00001" summary="socket">
       <created>1609324510071</created>
@@ -80,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609324510071</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="亮证修改">
+      <created>1609835534775</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609835534775</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,25 +99,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="socket" />
-    <option name="LAST_COMMIT_MESSAGE" value="socket" />
+    <MESSAGE value="亮证修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="亮证修改" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1360" y="112" key="CommitChangelistDialog2" timestamp="1609324509430">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="448" y="10" key="CommitChangelistDialog2" timestamp="1609835534176">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1360" y="112" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609324509430" />
-    <state x="-1180" y="275" key="FileChooserDialogImpl" timestamp="1609808897959">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="448" y="10" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609835534176" />
+    <state x="592" y="218" key="FileChooserDialogImpl" timestamp="1609836499709">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1180" y="275" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609808897959" />
+    <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609836499709" />
     <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609461321028" />
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609324518574">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609324518574" />
-    <state x="447" y="145" width="642" height="534" key="find.popup" timestamp="1609824748968">
+    <state x="447" y="145" width="642" height="534" key="find.popup" timestamp="1609842768838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="145" width="642" height="534" key="find.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609824748968" />
+    <state x="447" y="145" width="642" height="534" key="find.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609842768838" />
   </component>
 </project>

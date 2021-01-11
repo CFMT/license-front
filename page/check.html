@@ -21,7 +21,22 @@
 
 </body>
 <script src="../js/public.js"></script>
+<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>
 <script>
+
+function getQueryVariable(variable) {
+  let query = window.location.search.substring(1);
+  let vars = query.split("&");
+  for (let i=0; i < vars.length; i++) {
+    let pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  return false;
+}
+
+const vConsole = new VConsole();
 
 const checkInput = document.getElementById('check-input');
 const rememberPWD = document.getElementById('rememberPWD');
@@ -30,11 +45,13 @@ const idCardNo = getQueryVariable('idCardNo');
 console.log('idCardNo==', idCardNo);
 
 checkButton.onclick = () => {
+  console.log('click1');
   const pwd = checkInput.value;
   if (!pwd) {
     alert('请输入访问密码');
     return
   }
+  console.log('click2');
   window.location.href = 'showLicense.html?idCardNo=' + idCardNo
 };
 
